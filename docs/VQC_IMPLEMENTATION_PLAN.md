@@ -139,6 +139,23 @@ SQLite persistence of full config + training history + results; History UI
 (search/filter/duplicate/export); CSV/JSON/Markdown export; full pytest
 suite; README + Documentation page.
 
+## 5a. UI implementation note
+
+Phases 5-7 landed together as one guided stepper at `/experiments/new`:
+Dataset -> Preprocessing -> Feature Map -> Ansatz -> Optimizer -> Training
+Config -> Classical Baselines -> Review -> Execute & Results. The Ansatz
+step shows the live feature-map-only, ansatz-only, and combined circuit
+previews with encoding vs. trainable parameter counts kept visually
+distinct. Execute & Results starts with a real-time Training Monitor
+(actual loss-vs-iteration chart, updated by polling as the optimizer's
+real callback fires) and transitions automatically to a three-tab
+Results view (Model Comparison / Model Results / Circuit Analysis) once
+the job completes. Experiment History and Model Comparison list real
+persisted runs; detail pages support duplicate-configuration and
+CSV/training-history/JSON/Markdown export. Verified live end to end: a
+full two_moons VQC run, honest result (classical MLP beat VQC on a short
+COBYLA budget, reported as-is, no convergence claimed).
+
 ## 6. Research-integrity rules (enforced throughout)
 
 No fabricated metrics, circuit diagrams, resource counts, loss values, or

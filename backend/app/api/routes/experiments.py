@@ -1,3 +1,5 @@
+from datetime import datetime, timezone
+
 from fastapi import APIRouter, BackgroundTasks, HTTPException
 
 from app.models.experiment import ExperimentRecord
@@ -7,6 +9,18 @@ from app.services import experiment_service
 router = APIRouter(prefix="/experiments", tags=["experiments"])
 
 
+def _iso_utc(dt: datetime | None) -> str | None:
+    """SQLite drops tzinfo on round-trip even for timezone=True columns, so
+    naive datetimes here are always UTC — make that explicit before
+    serializing, otherwise JS `new Date()` on the frontend parses the
+    string as local time and reports wildly wrong elapsed times."""
+    if dt is None:
+        return None
+    if dt.tzinfo is None:
+        dt = dt.replace(tzinfo=timezone.utc)
+    return dt.isoformat()
+
+
 def _to_summary(record: ExperimentRecord) -> ExperimentSummary:
     return ExperimentSummary(
         id=record.id,
@@ -14,9 +28,9 @@ def _to_summary(record: ExperimentRecord) -> ExperimentSummary:
         status=record.status,
         stage=record.stage,
         dataset_id=record.dataset_id,
-        created_at=record.created_at.isoformat(),
-        started_at=record.started_at.isoformat() if record.started_at else None,
-        completed_at=record.completed_at.isoformat() if record.completed_at else None,
+        created_at=_iso_utc(record.created_at),
+        started_at=_iso_utc(record.started_at),
+        completed_at=_iso_utc(record.completed_at),
         error=record.error,
     )
 
