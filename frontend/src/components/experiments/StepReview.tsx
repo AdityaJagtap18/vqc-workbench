@@ -22,7 +22,7 @@ export function StepReview({
     <div className="space-y-5">
       <SectionCard title="Experiment name">
         <input
-          className="w-full max-w-md rounded border border-border bg-canvas px-2 py-1.5 text-sm"
+          className="w-full max-w-md border border-border bg-canvas px-2 py-1.5 text-sm"
           value={name}
           onChange={(e) => onNameChange(e.target.value)}
           placeholder="e.g. zz-realamplitudes-two-moons"

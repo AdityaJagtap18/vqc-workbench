@@ -89,7 +89,7 @@ export function StepFeatureMap({
           {config.feature_map === "PauliFeatureMap" && (
             <Field label="Pauli strings (comma separated)" hint="e.g. Z, ZZ, XX">
               <input
-                className="rounded border border-border bg-canvas px-2 py-1.5 text-sm"
+                className="border border-border bg-canvas px-2 py-1.5 text-sm"
                 defaultValue={(config.paulis ?? ["Z", "ZZ"]).join(", ")}
                 onBlur={(e) =>
                   onChange({
@@ -121,7 +121,7 @@ export function StepFeatureMap({
                   .join(", ")}
               </dd>
             </dl>
-            <pre className="overflow-x-auto whitespace-pre rounded bg-canvas p-3 text-[10px] leading-tight font-mono-tech text-ink">
+            <pre className="overflow-x-auto whitespace-pre bg-canvas p-3 text-[10px] leading-tight font-mono-tech text-ink">
               {preview.feature_map.ascii_drawing}
             </pre>
           </>

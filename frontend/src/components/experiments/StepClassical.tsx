@@ -13,7 +13,7 @@ function ModelRow({
   onChange: (next: ClassicalModelConfig) => void;
 }) {
   return (
-    <div className="rounded border border-border p-4">
+    <div className="border border-border p-4">
       <label className="flex items-center gap-2 text-sm font-medium text-ink">
         <input
           type="checkbox"

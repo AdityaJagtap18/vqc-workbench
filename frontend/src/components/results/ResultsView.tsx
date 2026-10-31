@@ -28,13 +28,13 @@ export function ResultsView({ detail }: { detail: ExperimentDetail }) {
   return (
     <div>
       <div className="mb-4 flex flex-wrap items-center justify-between gap-3">
-        <div className="flex gap-1 rounded border border-border bg-canvas p-1">
+        <div className="flex gap-4 border-b border-border">
           {TABS.map((t) => (
             <button
               key={t.key}
               onClick={() => setTab(t.key)}
-              className={`rounded px-3 py-1 text-sm font-medium transition-colors ${
-                tab === t.key ? "bg-surface text-accent shadow-sm" : "text-muted hover:text-ink"
+              className={`border-b-2 px-1 py-1.5 text-sm font-medium transition-colors ${
+                tab === t.key ? "border-accent text-accent" : "border-transparent text-muted hover:text-ink"
               }`}
             >
               {t.label}
@@ -61,7 +61,7 @@ function ExportButton({ label, onClick }: { label: string; onClick: () => void }
   return (
     <button
       onClick={onClick}
-      className="flex items-center gap-1 rounded border border-border px-2.5 py-1 text-xs text-ink hover:bg-canvas"
+      className="flex items-center gap-1 border border-border px-2.5 py-1 text-xs text-ink hover:bg-canvas"
     >
       <Download size={12} />
       {label}

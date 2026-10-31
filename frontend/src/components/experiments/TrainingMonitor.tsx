@@ -102,7 +102,7 @@ export function TrainingMonitor({
             return (
               <li
                 key={stage}
-                className={`flex items-center gap-2 rounded px-2 py-1.5 text-sm ${
+                className={`flex items-center gap-2 px-2 py-1.5 text-sm ${
                   isCurrent ? "bg-accent/10 text-accent" : isDone ? "text-ink" : "text-muted"
                 }`}
               >
@@ -118,7 +118,7 @@ export function TrainingMonitor({
         </ol>
 
         {failed && (
-          <div className="mt-4 flex items-start gap-2 rounded border border-danger/40 bg-danger/10 px-3 py-2 text-sm text-danger">
+          <div className="mt-4 flex items-start gap-2 border border-danger/40 bg-danger/10 px-3 py-2 text-sm text-danger">
             <AlertTriangle size={16} className="mt-0.5 shrink-0" />
             <div>
               <p className="font-medium">Experiment failed</p>

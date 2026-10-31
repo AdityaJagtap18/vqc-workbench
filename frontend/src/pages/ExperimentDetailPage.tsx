@@ -25,7 +25,7 @@ export default function ExperimentDetailPage() {
       <PageHeader title={detail.name} description={`Dataset: ${detail.dataset_id} · Status: ${detail.status}`} />
 
       {detail.status !== "COMPLETED" && (
-        <div className="mb-5 rounded border border-border bg-surface p-4 text-sm text-muted">
+        <div className="mb-5 border border-border border-t-2 border-t-accent bg-surface p-4 text-sm text-muted">
           {detail.status === "FAILED"
             ? `This experiment failed: ${detail.error}`
             : `This experiment is still ${detail.status.toLowerCase()} — results will appear once it completes.`}

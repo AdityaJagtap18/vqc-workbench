@@ -7,7 +7,7 @@ export default function Documentation() {
         title="Documentation"
         description="Background on variational quantum classification and this workbench's methodology."
       />
-      <section className="space-y-4 rounded border border-border bg-surface p-5 text-sm leading-relaxed text-ink">
+      <section className="space-y-4 border border-border border-t-2 border-t-accent bg-surface p-5 text-sm leading-relaxed text-ink">
         <p>
           <strong>Feature map.</strong> A circuit U(x) encodes a classical feature vector x
           into a quantum state — the same family of circuits (ZFeatureMap, ZZFeatureMap,

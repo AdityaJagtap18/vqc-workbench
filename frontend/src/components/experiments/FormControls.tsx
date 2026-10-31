@@ -10,8 +10,8 @@ export function Field({
   children: ReactNode;
 }) {
   return (
-    <label className="flex flex-col gap-1 text-sm">
-      <span className="text-muted">{label}</span>
+    <label className="flex flex-col gap-1.5 text-sm">
+      <span className="text-[11px] font-medium uppercase tracking-wide text-muted">{label}</span>
       {children}
       {hint && <span className="text-xs text-muted">{hint}</span>}
     </label>
@@ -31,7 +31,7 @@ export function Select({
 }) {
   return (
     <select
-      className="rounded border border-border bg-canvas px-2 py-1.5 text-sm disabled:opacity-50"
+      className="border border-border bg-canvas px-2 py-1.5 text-sm text-ink disabled:opacity-50"
       value={value}
       disabled={disabled}
       onChange={(e) => onChange(e.target.value)}
@@ -61,7 +61,7 @@ export function NumberInput({
   return (
     <input
       type="number"
-      className="w-28 rounded border border-border bg-canvas px-2 py-1.5 text-sm"
+      className="w-28 border border-border bg-canvas px-2 py-1.5 text-sm font-mono-tech text-ink"
       value={value}
       min={min}
       max={max}
@@ -81,8 +81,8 @@ export function SectionCard({
   className?: string;
 }) {
   return (
-    <section className={`rounded border border-border bg-surface p-5 ${className}`}>
-      <h2 className="mb-3 text-sm font-semibold text-ink">{title}</h2>
+    <section className={`border border-border border-t-2 border-t-accent bg-surface p-5 ${className}`}>
+      <h2 className="mb-3 text-[11px] font-semibold uppercase tracking-wide text-accent">{title}</h2>
       {children}
     </section>
   );
@@ -107,7 +107,7 @@ export function StepNav({
         type="button"
         onClick={onBack}
         disabled={!onBack}
-        className="rounded border border-border px-3 py-1.5 text-sm text-ink disabled:opacity-0"
+        className="border border-border px-3 py-1.5 text-sm text-ink hover:bg-canvas disabled:opacity-0"
       >
         {backLabel}
       </button>
@@ -115,7 +115,7 @@ export function StepNav({
         type="button"
         onClick={onNext}
         disabled={nextDisabled || !onNext}
-        className="rounded bg-accent px-4 py-1.5 text-sm font-medium text-white hover:bg-accent-hover disabled:cursor-not-allowed disabled:opacity-40"
+        className="bg-accent px-4 py-1.5 text-sm font-medium text-white hover:bg-accent-hover disabled:cursor-not-allowed disabled:opacity-40"
       >
         {nextLabel}
       </button>
@@ -135,10 +135,10 @@ export function PlaceholderPage({
   return (
     <div className="max-w-3xl">
       <div className="mb-6 border-b border-border pb-4">
-        <h1 className="text-xl font-semibold text-ink">{title}</h1>
+        <h1 className="font-display text-xl font-semibold tracking-tight text-ink">{title}</h1>
         <p className="mt-1 text-sm text-muted">{description}</p>
       </div>
-      <div className="rounded border border-dashed border-border bg-surface p-5 text-sm text-muted">
+      <div className="border border-dashed border-border bg-surface p-5 text-sm text-muted">
         Not yet implemented — scheduled for {phase} of the implementation plan.
       </div>
     </div>

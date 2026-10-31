@@ -80,7 +80,7 @@ export function DecisionBoundaryPlot({
         ref={canvasRef}
         width={SIZE}
         height={SIZE}
-        className="rounded border border-border"
+        className="border border-border"
         style={{ width: SIZE, height: SIZE }}
       />
     </div>

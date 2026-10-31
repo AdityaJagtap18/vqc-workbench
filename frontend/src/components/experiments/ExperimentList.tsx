@@ -48,13 +48,13 @@ export function ExperimentList({
     <div>
       <div className="mb-3 flex flex-wrap gap-3">
         <input
-          className="rounded border border-border bg-canvas px-2 py-1.5 text-sm"
+          className="border border-border bg-canvas px-2 py-1.5 text-sm"
           placeholder="Search by name…"
           value={search}
           onChange={(e) => setSearch(e.target.value)}
         />
         <select
-          className="rounded border border-border bg-canvas px-2 py-1.5 text-sm"
+          className="border border-border bg-canvas px-2 py-1.5 text-sm"
           value={datasetFilter}
           onChange={(e) => setDatasetFilter(e.target.value)}
         >

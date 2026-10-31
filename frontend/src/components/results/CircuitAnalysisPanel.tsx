@@ -60,7 +60,7 @@ export function CircuitAnalysisPanel({ detail }: { detail: ExperimentDetail }) {
           {circuit.feature_map} (encoding) composed with {circuit.ansatz} (trainable) — exactly
           what VQC evaluates per sample.
         </p>
-        <pre className="overflow-x-auto whitespace-pre rounded bg-canvas p-3 text-[10px] leading-tight font-mono-tech text-ink">
+        <pre className="overflow-x-auto whitespace-pre bg-canvas p-3 text-[10px] leading-tight font-mono-tech text-ink">
           {circuit.ascii_drawing}
         </pre>
       </SectionCard>

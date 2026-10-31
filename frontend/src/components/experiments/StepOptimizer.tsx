@@ -99,7 +99,7 @@ export function StepOptimizer({
           <>
             <p className="mb-3 text-sm text-ink">{info.description}</p>
             <span
-              className={`inline-block rounded px-2 py-1 text-xs font-medium ${
+              className={`inline-block px-2 py-1 text-xs font-medium ${
                 info.usesGradient ? "bg-accent/10 text-accent" : "bg-canvas text-muted"
               }`}
             >

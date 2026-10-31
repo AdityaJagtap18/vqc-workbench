@@ -62,11 +62,11 @@ export default function DatasetExplorer() {
         description="Inspect a dataset before configuring a VQC experiment."
       />
 
-      <div className="mb-6 flex flex-wrap items-end gap-4 rounded border border-border bg-surface p-4">
+      <div className="mb-6 flex flex-wrap items-end gap-4 border border-border border-t-2 border-t-accent bg-surface p-4">
         <label className="flex flex-col gap-1 text-sm">
           <span className="text-muted">Dataset</span>
           <select
-            className="rounded border border-border bg-canvas px-2 py-1.5 text-sm"
+            className="border border-border bg-canvas px-2 py-1.5 text-sm"
             value={datasetId}
             onChange={(e) => setDatasetId(e.target.value as DatasetId)}
           >
@@ -86,7 +86,7 @@ export default function DatasetExplorer() {
             max={0.9}
             value={testSize}
             onChange={(e) => setTestSize(Number(e.target.value))}
-            className="w-24 rounded border border-border bg-canvas px-2 py-1.5 text-sm"
+            className="w-24 border border-border bg-canvas px-2 py-1.5 text-sm"
           />
         </label>
         <label className="flex flex-col gap-1 text-sm">
@@ -95,7 +95,7 @@ export default function DatasetExplorer() {
             type="number"
             value={seed}
             onChange={(e) => setSeed(Number(e.target.value))}
-            className="w-24 rounded border border-border bg-canvas px-2 py-1.5 text-sm"
+            className="w-24 border border-border bg-canvas px-2 py-1.5 text-sm"
           />
         </label>
       </div>
@@ -105,8 +105,8 @@ export default function DatasetExplorer() {
 
       {preview && !loading && (
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-          <section className="rounded border border-border bg-surface p-5">
-            <h2 className="mb-3 text-sm font-semibold text-ink">{preview.dataset.name}</h2>
+          <section className="border border-border border-t-2 border-t-accent bg-surface p-5">
+            <h2 className="mb-3 text-[11px] font-semibold uppercase tracking-wide text-accent">{preview.dataset.name}</h2>
             <p className="mb-3 text-sm text-muted">{preview.dataset.description}</p>
             <dl className="grid grid-cols-2 gap-y-1 text-sm font-mono-tech">
               <dt className="text-muted">Total samples</dt>
@@ -120,8 +120,8 @@ export default function DatasetExplorer() {
             </dl>
           </section>
 
-          <section className="rounded border border-border bg-surface p-5">
-            <h2 className="mb-3 text-sm font-semibold text-ink">Class distribution</h2>
+          <section className="border border-border border-t-2 border-t-accent bg-surface p-5">
+            <h2 className="mb-3 text-[11px] font-semibold uppercase tracking-wide text-accent">Class distribution</h2>
             <ResponsiveContainer width="100%" height={160}>
               <PieChart>
                 <Pie
@@ -150,11 +150,11 @@ export default function DatasetExplorer() {
             </ul>
           </section>
 
-          <section className="md:col-span-2 rounded border border-border bg-surface p-5">
+          <section className="md:col-span-2 border border-border border-t-2 border-t-accent bg-surface p-5">
             <div className="mb-3 flex items-center justify-between">
-              <h2 className="text-sm font-semibold text-ink">Feature distribution</h2>
+              <h2 className="text-[11px] font-semibold uppercase tracking-wide text-accent">Feature distribution</h2>
               <select
-                className="rounded border border-border bg-canvas px-2 py-1 text-xs"
+                className="border border-border bg-canvas px-2 py-1 text-xs"
                 value={feature}
                 onChange={(e) => setFeature(e.target.value)}
               >
@@ -186,8 +186,8 @@ export default function DatasetExplorer() {
             )}
           </section>
 
-          <section className="md:col-span-2 rounded border border-border bg-surface p-5">
-            <h2 className="mb-3 text-sm font-semibold text-ink">Sample preview</h2>
+          <section className="md:col-span-2 border border-border border-t-2 border-t-accent bg-surface p-5">
+            <h2 className="mb-3 text-[11px] font-semibold uppercase tracking-wide text-accent">Sample preview</h2>
             <div className="overflow-x-auto">
               <table className="w-full text-left text-sm">
                 <thead>

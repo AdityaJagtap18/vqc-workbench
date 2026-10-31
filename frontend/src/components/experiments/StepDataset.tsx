@@ -55,7 +55,7 @@ export function StepDataset({
               key={d.id}
               type="button"
               onClick={() => onChange({ ...dataset, dataset_id: d.id as DatasetId, selected_classes: null })}
-              className={`block w-full rounded border px-3 py-2 text-left text-sm transition-colors ${
+              className={`block w-full border px-3 py-2 text-left text-sm transition-colors ${
                 dataset.dataset_id === d.id
                   ? "border-accent bg-accent/10"
                   : "border-border hover:bg-canvas"

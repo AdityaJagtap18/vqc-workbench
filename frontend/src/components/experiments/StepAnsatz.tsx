@@ -66,7 +66,7 @@ export function StepAnsatz({
           {config.ansatz === "EfficientSU2" && (
             <Field label="Rotation gates (comma separated)" hint="e.g. ry, rz">
               <input
-                className="rounded border border-border bg-canvas px-2 py-1.5 text-sm"
+                className="border border-border bg-canvas px-2 py-1.5 text-sm"
                 defaultValue={(config.su2_gates ?? ["ry", "rz"]).join(", ")}
                 onBlur={(e) =>
                   onChange({
@@ -104,11 +104,11 @@ export function StepAnsatz({
               <dd>{preview.combined.depth}</dd>
             </dl>
             <p className="mb-1 text-xs text-muted">Ansatz only</p>
-            <pre className="mb-3 overflow-x-auto whitespace-pre rounded bg-canvas p-2 text-[10px] leading-tight font-mono-tech text-ink">
+            <pre className="mb-3 overflow-x-auto whitespace-pre bg-canvas p-2 text-[10px] leading-tight font-mono-tech text-ink">
               {preview.ansatz.ascii_drawing}
             </pre>
             <p className="mb-1 text-xs text-muted">Combined (feature map + ansatz) — what VQC actually evaluates</p>
-            <pre className="overflow-x-auto whitespace-pre rounded bg-canvas p-2 text-[10px] leading-tight font-mono-tech text-ink">
+            <pre className="overflow-x-auto whitespace-pre bg-canvas p-2 text-[10px] leading-tight font-mono-tech text-ink">
               {preview.combined.ascii_drawing}
             </pre>
           </>
